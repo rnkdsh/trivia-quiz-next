@@ -1,19 +1,17 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 
 import { useQuery } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
 
 import { Skeleton } from '@/components/ui/skeleton';
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
@@ -21,7 +19,6 @@ import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -35,26 +32,18 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
+import { QuizForm, QuizFormSchema } from './schema/quiz';
 import { getCategories } from './data/categories';
 
-const formSchema = z.object({
-  category: z.string().optional(),
-  // difficulty: z.enum(['', 'easy', 'medium', 'hard']).default(''),
-  difficulty: z.string().default(''),
-  // type: z.enum(['multiple', 'boolean']).default('multiple'),
-  type: z.string().default('multiple'),
-  amount: z.string().default('10'),
-});
-
 export default function Home() {
-  const router = useRouter();
+  // const router = useRouter();
   const { data, isLoading, error } = useQuery({
     queryKey: ['categories'],
     queryFn: getCategories,
   });
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<QuizForm>({
+    resolver: zodResolver(QuizFormSchema),
     defaultValues: {
       category: '',
       difficulty: '',
