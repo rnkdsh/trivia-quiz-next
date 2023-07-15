@@ -1,3 +1,5 @@
+'use client';
+
 import { Question } from '../../types/Question';
 
 interface QuestionProps {

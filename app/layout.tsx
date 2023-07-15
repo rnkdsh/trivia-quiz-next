@@ -4,6 +4,8 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import Navbar from './components/Navbar';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Provider } from 'react-redux';
+import store from './store';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,15 +24,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>
-        <Navbar />
-        <main>
-          <QueryClientProvider client={queryClient}>
-            {children}
-          </QueryClientProvider>
-        </main>
-      </body>
-    </html>
+    <Provider store={store}>
+      <html lang='en'>
+        <body className={inter.className}>
+          <Navbar />
+          <main>
+            <QueryClientProvider client={queryClient}>
+              {children}
+            </QueryClientProvider>
+          </main>
+        </body>
+      </html>
+    </Provider>
   );
 }
