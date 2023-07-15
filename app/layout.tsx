@@ -1,16 +1,20 @@
+'use client';
 import './globals.css';
-import type { Metadata } from 'next';
+// import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Navbar from './components/Navbar';
-import MainContainer from './components/MainContainer';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
+// Create a client
+const queryClient = new QueryClient();
+
+/* export const metadata: Metadata = {
   title: 'TRIVIA',
   description:
     'Challenge your knowledge with our captivating TRIVIA quiz app and discover the joy of learning through fun and exciting questions.',
-};
+}; */
 
 export default function RootLayout({
   children,
@@ -22,7 +26,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         <main>
-          <MainContainer>{children}</MainContainer>
+          <QueryClientProvider client={queryClient}>
+            {children}
+          </QueryClientProvider>
         </main>
       </body>
     </html>
