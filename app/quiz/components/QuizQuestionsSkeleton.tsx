@@ -19,8 +19,6 @@ export default function QuizQuestionsSkeleton(
       <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-5 mt-5'>
         <div className='flex flex-col gap-2'>
           <Skeleton className='w-96 h-8 rounded-full' />
-          <Skeleton className='w-80 h-8 rounded-full' />
-          <Skeleton className='w-72 h-8 rounded-full' />
         </div>
         <div className='flex flex-col gap-5'>
           <Skeleton className='w-full h-16 rounded-lg' />
