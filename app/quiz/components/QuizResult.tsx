@@ -1,8 +1,10 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import Confetti from 'react-confetti';
 
 interface QuizResultProps {
   total: number;
@@ -10,8 +12,21 @@ interface QuizResultProps {
 }
 
 export default function QuizResult(props: QuizResultProps) {
+  const [dimensions, setDimensions] = React.useState({
+    width: 0,
+    height: 0,
+  });
+
+  React.useEffect(() => {
+    const { innerWidth: width, innerHeight: height } = window;
+    setDimensions({
+      width,
+      height,
+    });
+  }, []);
+
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen py-2 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200'>
+    <div className='flex flex-col items-center justify-center h-full py-2 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200'>
       <Image
         src='/undraw_choose_re_7d5a.svg'
         alt='Logo'
@@ -25,6 +40,13 @@ export default function QuizResult(props: QuizResultProps) {
       <Link href={'/'}>
         <Button type='button'>Home</Button>
       </Link>
+      <Confetti
+        width={dimensions.width}
+        height={dimensions.height}
+        recycle={false}
+        numberOfPieces={500}
+        tweenDuration={10000}
+      />
     </div>
   );
 }
