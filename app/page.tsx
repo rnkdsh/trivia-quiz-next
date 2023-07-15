@@ -1,4 +1,7 @@
 'use client';
+import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { useQuery } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
@@ -32,7 +35,6 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
-import React from 'react';
 import { getCategories } from './data/categories';
 
 const formSchema = z.object({
@@ -45,6 +47,7 @@ const formSchema = z.object({
 });
 
 export default function Home() {
+  const router = useRouter();
   const { data, isLoading, error } = useQuery({
     queryKey: ['categories'],
     queryFn: getCategories,
@@ -60,11 +63,12 @@ export default function Home() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  /* function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
-  }
+    router.push('/quiz');
+  } */
 
   return (
     <div className='flex flex-col items-center justify-center min-h-screen py-2 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200'>
@@ -77,7 +81,9 @@ export default function Home() {
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
+            <form
+              /* onSubmit={form.handleSubmit(onSubmit)} */ className='space-y-8'
+            >
               <FormField
                 control={form.control}
                 name='category'
@@ -180,7 +186,16 @@ export default function Home() {
                   </FormItem>
                 )}
               />
-              <Button type='submit'>Submit</Button>
+              <Link
+                href={{
+                  pathname: '/quiz',
+                  query: form.getValues(),
+                }}
+              >
+                <Button type='button' disabled={isLoading} className='mt-5'>
+                  Start
+                </Button>
+              </Link>
             </form>
           </Form>
         </CardContent>
