@@ -36,7 +36,7 @@ function QuizQuestions(props: QuizQuestionsProps) {
       </div>
       <div className='flex flex-row justify-between w-full pt-5 pb-5'>
         <Progress
-          value={((props.currentQuestion + 1) * 100) / props.totalQuestions}
+          value={(props.currentQuestion * 100) / props.totalQuestions}
         />
       </div>
       <QuestionItem

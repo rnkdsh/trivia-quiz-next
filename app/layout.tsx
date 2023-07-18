@@ -1,23 +1,14 @@
-'use client';
+// 'use client';
 import './globals.css';
-// import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
-import { Inter } from 'next/font/google';
-import Navbar from './components/Navbar';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Provider } from 'react-redux';
-import store from './store';
+import MainContainer from './components/MainContainer';
 
-const inter = Inter({ subsets: ['latin'] });
-
-// Create a client
-const queryClient = new QueryClient();
-
-/* export const metadata: Metadata = {
+export const metadata: Metadata = {
   title: 'TRIVIA',
   description:
     'Challenge your knowledge with our captivating TRIVIA quiz app and discover the joy of learning through fun and exciting questions.',
-}; */
+};
 
 export default function RootLayout({
   children,
@@ -25,18 +16,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Provider store={store}>
-      <html lang='en'>
-        <body className={inter.className}>
-          <Navbar />
-          <main>
-            <QueryClientProvider client={queryClient}>
-              {children}
-            </QueryClientProvider>
-            <Analytics />
-          </main>
-        </body>
-      </html>
-    </Provider>
+    <html lang='en'>
+      <MainContainer>{children}</MainContainer>
+      <Analytics />
+    </html>
   );
 }
