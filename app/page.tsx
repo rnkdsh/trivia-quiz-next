@@ -45,8 +45,8 @@ export default function Home() {
   const form = useForm<QuizForm>({
     resolver: zodResolver(QuizFormSchema),
     defaultValues: {
-      category: '',
-      difficulty: '',
+      category: undefined,
+      difficulty: undefined,
       type: 'multiple',
       amount: '10',
     },
@@ -85,14 +85,13 @@ export default function Home() {
                       ) : (
                         <Select
                           onValueChange={field.onChange}
-                          defaultValue={field.value}
+                          defaultValue={field.value || undefined}
                           disabled={isLoading}
                         >
                           <SelectTrigger id='category'>
-                            <SelectValue placeholder='Select' />
+                            <SelectValue placeholder='Any' />
                           </SelectTrigger>
                           <SelectContent position='popper'>
-                            <SelectItem value=''>Any</SelectItem>
                             {data?.map((category) => (
                               <SelectItem
                                 key={category.id}
@@ -118,13 +117,12 @@ export default function Home() {
                     <FormControl>
                       <Select
                         onValueChange={field.onChange}
-                        defaultValue={field.value}
+                        defaultValue={field.value || undefined}
                       >
                         <SelectTrigger id='difficulty'>
-                          <SelectValue placeholder='Select' />
+                          <SelectValue placeholder='Any' />
                         </SelectTrigger>
                         <SelectContent position='popper'>
-                          <SelectItem value=''>Any</SelectItem>
                           <SelectItem value='easy'>Easy</SelectItem>
                           <SelectItem value='medium'>Medium</SelectItem>
                           <SelectItem value='hard'>Hard</SelectItem>
