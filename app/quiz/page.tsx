@@ -35,7 +35,7 @@ export default function Quiz() {
     refetchOnMount: false,
     refetchOnReconnect: false,
     refetchOnWindowFocus: false,
-    cacheTime: 0,
+    gcTime: 0,
   });
   //   console.log(data);
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
