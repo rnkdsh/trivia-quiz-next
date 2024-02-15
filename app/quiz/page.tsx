@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 import { useAppDispatch } from '../store';
@@ -15,7 +15,7 @@ import QuizResult from './components/QuizResult';
 import QuizQuestions from './components/QuizQuestions';
 import QuizQuestionsSkeleton from './components/QuizQuestionsSkeleton';
 
-export default function Quiz() {
+function QuizContent() {
   const appDispatch = useAppDispatch();
 
   const params = useSearchParams();
@@ -68,5 +68,13 @@ export default function Quiz() {
         <QuizResult total={data.length} correct={correctAnswers} />
       )}
     </div>
+  );
+}
+
+export default function Quiz() {
+  return (
+    <Suspense>
+      <QuizContent />
+    </Suspense>
   );
 }
