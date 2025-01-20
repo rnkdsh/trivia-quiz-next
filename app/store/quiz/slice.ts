@@ -1,5 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export interface QuizState {
   totalQuestionsAnswered: number;
@@ -12,7 +11,7 @@ const initialState: QuizState = {
 };
 
 export const quizSlice = createSlice({
-  name: 'quiz',
+  name: "quiz",
   initialState: initialState,
   reducers: {
     increaseTotalQuestionsAnsweredCorrectly: (state) => {

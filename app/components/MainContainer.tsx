@@ -1,11 +1,11 @@
-'use client';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Inter } from 'next/font/google';
-import { Provider } from 'react-redux';
-import Navbar from './Navbar';
-import store from '../store';
+"use client";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Inter } from "next/font/google";
+import { Provider } from "react-redux";
+import Navbar from "./Navbar";
+import store from "../store";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 // Create a client
 const queryClient = new QueryClient();

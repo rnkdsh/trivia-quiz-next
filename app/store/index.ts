@@ -1,7 +1,7 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { setupListeners } from '@reduxjs/toolkit/query';
-import { useDispatch } from 'react-redux';
-import { quizSlice } from './quiz/slice';
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { useDispatch } from "react-redux";
+import { quizSlice } from "./quiz/slice";
 
 const rootReducer = combineReducers({
   quiz: quizSlice.reducer,
