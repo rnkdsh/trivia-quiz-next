@@ -82,14 +82,14 @@ export default function Home() {
                     <FormLabel>Category</FormLabel>
                     <FormControl>
                       {isLoading ? (
-                        <Skeleton className="h-8 w-100 rounded-md" />
+                        <Skeleton className="h-8 w-full rounded-md" />
                       ) : (
                         <Select
                           onValueChange={field.onChange}
                           defaultValue={field.value || undefined}
                           disabled={isLoading}
                         >
-                          <SelectTrigger id="category">
+                          <SelectTrigger id="category" className="w-full">
                             <SelectValue placeholder="Any" />
                           </SelectTrigger>
                           <SelectContent position="popper">
@@ -120,7 +120,7 @@ export default function Home() {
                         onValueChange={field.onChange}
                         defaultValue={field.value || undefined}
                       >
-                        <SelectTrigger id="difficulty">
+                        <SelectTrigger id="difficulty" className="w-full">
                           <SelectValue placeholder="Any" />
                         </SelectTrigger>
                         <SelectContent position="popper">
@@ -146,7 +146,7 @@ export default function Home() {
                         defaultValue={field.value}
                         disabled
                       >
-                        <SelectTrigger id="type">
+                        <SelectTrigger id="type" className="w-full">
                           <SelectValue placeholder="Select" />
                         </SelectTrigger>
                         <SelectContent position="popper">
