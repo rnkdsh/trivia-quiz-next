@@ -4,7 +4,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function QuizQuestionsSkeleton() {
   return (
-    <div className="max-w-screen-xl mx-auto p-4">
+    <div className="max-w-(--breakpoint-xl) mx-auto p-4">
       <div className="flex flex-row justify-between w-full text-xl font-semibold mt-2">
         <Skeleton className="w-16 h-5 rounded-full" />
         <Skeleton className="w-16 h-5 rounded-full" />

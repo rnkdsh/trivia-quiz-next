@@ -25,7 +25,7 @@ function QuizQuestions(props: QuizQuestionsProps) {
   );
 
   return (
-    <div className="max-w-screen-xl mx-auto p-4">
+    <div className="max-w-(--breakpoint-xl) mx-auto p-4">
       <div className="flex flex-row justify-between w-full text-xl font-semibold">
         <div className="flex-1">
           {props.correctAnswers}/{props.currentQuestion + 1}
