@@ -33,8 +33,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { QuizForm, QuizFormSchema } from "./schema/quiz";
-import { getCategories } from "./data/categories";
+import { QuizForm, QuizFormSchema } from "@/schema/quiz";
+import { getCategories } from "@/data/categories";
 
 export default function Home() {
   // const router = useRouter();

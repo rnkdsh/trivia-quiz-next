@@ -3,17 +3,17 @@
 import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { useAppDispatch } from "../store";
-import { QuizForm } from "../schema/quiz";
+import { useAppDispatch } from "@/store";
+import { QuizForm } from "@/schema/quiz";
 
-import { getQuestions } from "../data/questions";
+import { getQuestions } from "@/data/questions";
 import {
   increaseTotalQuestionsAnswered,
   increaseTotalQuestionsAnsweredCorrectly,
-} from "../store/quiz/slice";
-import QuizResult from "./components/QuizResult";
-import QuizQuestions from "./components/QuizQuestions";
-import QuizQuestionsSkeleton from "./components/QuizQuestionsSkeleton";
+} from "@/store/quiz/slice";
+import QuizResult from "@/components/QuizResult";
+import QuizQuestions from "@/components/QuizQuestions";
+import QuizQuestionsSkeleton from "@/components/QuizQuestionsSkeleton";
 
 function QuizContent() {
   const appDispatch = useAppDispatch();

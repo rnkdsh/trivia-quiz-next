@@ -1,8 +1,8 @@
 "use client";
 
-import { useSelector } from "react-redux";
-import { RootState } from "../store";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
 
 export default function Navbar() {
   const quizState = useSelector((state: RootState) => state.quiz);

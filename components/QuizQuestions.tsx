@@ -2,9 +2,9 @@
 
 import React from "react";
 import { Progress } from "@/components/ui/progress";
-import { Question } from "@/app/types/Question";
+import { Question } from "@/types/Question";
 import QuestionItem from "./QuestionItem";
-import { useInterval } from "@/app/hooks/useInterval";
+import { useInterval } from "@/hooks/useInterval";
 
 interface QuizQuestionsProps {
   correctAnswers: number;
