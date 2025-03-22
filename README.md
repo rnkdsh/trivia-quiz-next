@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trivia Quiz (Next.js)
 
-## Getting Started
+![Trivia Quiz](https://img.shields.io/github/stars/rnkdsh/trivia-quiz-next?style=social)
+![License](https://img.shields.io/github/license/rnkdsh/trivia-quiz-next)
 
-First, run the development server:
+A fun and interactive Trivia Quiz built with Next.js! This project allows users to test their knowledge by answering multiple-choice questions from different categories.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
+
+- ⚡ Built with **Next.js** for fast performance
+- 🎨 Modern and responsive UI
+- 📊 Fetches trivia questions dynamically
+- 🔥 Tracks user scores
+- 🌎 Supports multiple categories and difficulty levels
+- 🎨 Styled with Tailwind CSS for rapid UI development
+- 🛠 Open-source and customizable
+
+## 📦 Installation
+
+### Prerequisites
+
+Make sure you have **Node.js** installed on your machine.
+
+```sh
+node -v # Ensure Node.js is installed
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Clone the Repository
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+git clone https://github.com/rnkdsh/trivia-quiz-next.git
+cd trivia-quiz-next
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Install Dependencies
 
-## Learn More
+```sh
+npm install  # or yarn install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Run the Development Server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+npm run dev  # or yarn dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The app should now be running at [http://localhost:3000](http://localhost:3000)!
 
-## Deploy on Vercel
+## 🎮 How to Play
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Select a category and difficulty level.
+2. Answer multiple-choice questions.
+3. Get instant feedback on your answers.
+4. Try to achieve the highest score!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠 Tech Stack
+
+- **Frontend:** Next.js, React
+- **Styling:** Tailwind CSS
+- **API:** [Open Trivia Database](https://opentdb.com)
+
+## 🤝 Contributing
+
+Contributions are welcome! If you’d like to improve this project, follow these steps:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Make your changes and commit (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature-branch`)
+5. Open a Pull Request
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## 🌟 Show Your Support
+
+If you like this project, consider giving it a ⭐ on GitHub!
+
+Happy coding! 🚀
