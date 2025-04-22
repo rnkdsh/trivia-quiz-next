@@ -33,7 +33,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { QuizForm, QuizFormSchema } from "@/schema/quiz";
+import { QuizFormSchema } from "@/schema/quiz";
 import { getCategories } from "@/data/categories";
 
 export default function Home() {
@@ -43,7 +43,7 @@ export default function Home() {
     queryFn: getCategories,
   });
 
-  const form = useForm<QuizForm>({
+  const form = useForm({
     resolver: zodResolver(QuizFormSchema),
     defaultValues: {
       category: undefined,
