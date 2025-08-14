@@ -33,13 +33,13 @@
     "zod": "^4.0.16"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/postcss": "^4.1.12",
     "@types/node": "22.17.1",
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7",
     "eslint": "9.33.0",
     "eslint-config-next": "15.4.6",
-    "tailwindcss": "^4.1.11",
+    "tailwindcss": "^4.1.12",
     "typescript": "^5.9.2"
   }
 }
