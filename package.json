@@ -20,7 +20,7 @@
     "@vercel/analytics": "^2.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "^1.0.1",
+    "lucide-react": "^1.6.0",
     "next": "16.2.1",
     "react": "19.2.4",
     "react-confetti": "^6.4.0",
