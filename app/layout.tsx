@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { OpenPanelComponent } from "@openpanel/nextjs";
 
 import "./globals.css";
 
@@ -48,6 +49,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+        <OpenPanelComponent
+          apiUrl={process.env.NEXT_PUBLIC_OPENPANEL_API_URL}
+          clientId={process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID || ""}
+          trackScreenViews={true}
+          trackAttributes={true}
+          trackOutgoingLinks={true}
+          // If you have a user id, you can pass it here to identify the user
+          // profileId={'123'}
+        />
         <Providers>
           <Navbar />
           <main>{children}</main>
